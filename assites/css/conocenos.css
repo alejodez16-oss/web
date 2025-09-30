@@ -1,0 +1,123 @@
+/*  SECCIÓN EQUIPO */
+.equipo {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 10px;
+    background: linear-gradient(135deg, #1f1f1f, #292929);
+    border-radius: 15px;
+    margin: 50px auto;
+    max-width: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/*  TÍTULO PRINCIPAL */
+.equipo h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    
+}
+
+/* CONTENEDOR DE TARJETAS */
+.tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+
+
+/*  DISEÑO DE CADA TARJETA */
+.tarjeta {
+    background: linear-gradient(135deg, #232323, #1a1a1a);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 400px;
+}
+
+/* EFECTO HOVER DE LA TARJETA */
+.tarjeta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+}
+
+/* 🖼️ IMAGEN DEL EQUIPO */
+.tarjeta img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* EFECTO DE BRILLO EN LA IMAGEN */
+.tarjeta img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+/*  NOMBRE Y CARGO */
+.tarjeta h3 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.tarjeta p {
+    font-size: 20px;
+    color: #ccc;
+}
+
+/* 📱RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .tarjetas {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*  SECCIÓN SOBRE NOSOTROS */
+.introduccion {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #1a1a2e, #0f0c29);
+    border-radius: 15px;
+    margin: 50px auto;
+    max-width: 90%;
+    box-shadow: 0 0 30px rgba(0, 0, 255, 0.3);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+/*  EFECTO HOVER DE FONDO */
+.introduccion:hover {
+    background: linear-gradient(135deg, #0f0c29, #302b63);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .introduccion {
+        padding: 50px 10px;
+    }
+
+    .titulo_intro {
+        font-size: 32px;
+    }
+
+    .texto_intro {
+        font-size: 18px;
+    }
+}

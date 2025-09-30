@@ -1,0 +1,250 @@
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Estilo del encabezado */
+.header {
+ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #1f1f1f, #444);
+    border-bottom: 2px solid #444;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.nombre_ {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    margin-left: 10px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #1d72b8;
+}
+
+/* Botón Cyberpunk */
+.btn_conocenos {
+    position: relative;
+    display: inline-flex;
+    align-items: center; /* Alinea verticalmente el texto */
+    justify-content: center; /* Centra horizontalmente el texto */
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 255, 0.5);
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    text-align: center; /* Asegura que el texto esté centrado */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del botón */
+}
+
+/* Efecto de luz interna */
+.btn_conocenos::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(0, 153, 255, 0.3) 10%, rgba(0, 0, 0, 0) 80%);
+    transition: all 0.4s ease-in-out;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+/* Hover con luz brillante */
+.btn_conocenos:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Hover: cambia el fondo y la sombra */
+.btn_conocenos:hover {
+    background: linear-gradient(135deg, #302b63, #24243e, #0f0c29);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+/* Activo: efecto de presión */
+.btn_conocenos:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(0, 255, 255, 0.8);
+}
+
+.btn_conocenos {
+    border-radius: 50px !important; /* Asegura esquinas redondeadas */
+}
+
+
+
+/* Estilo de la sección de imágenes */
+section {
+    display: flex;
+    gap: 40px;
+    padding: 50px;
+    overflow-x: auto; /* Permite desplazamiento horizontal si las imágenes exceden el ancho */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+}
+
+section img {
+    width: 250px; /* Tamaño más pequeño de las imágenes */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+section img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    section {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+
+/* Carrusel */
+.carousel-container {
+    width: 90%; /* Carrusel ocupa el 90% del ancho de la pantalla */
+    max-width: 1200px; /* Máximo de 1200px */
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra alrededor del cuadro */
+    border: 5px solid #2a5298; /* Borde alrededor del carrusel */
+}
+
+/* Contenedor de imágenes */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 450px; /* Altura fija para mantener el tamaño */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%; /* 3 veces el ancho del carrusel para las 3 imágenes */
+}
+
+.carousel-images img {
+    width: 100%; /* Cada imagen ocupa el 100% del contenedor */
+    height: 100%; /* Las imágenes se adaptan al alto del contenedor */
+    object-fit: cover; /* Mantiene la proporción sin deformarse */
+    border-radius: 15px;
+    flex-shrink: 0; /* Evita que las imágenes se achiquen */
+}
+
+/* Texto sobre las imágenes */
+.carousel-text {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Controles del carrusel */
+.carousel-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-nav button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+    
